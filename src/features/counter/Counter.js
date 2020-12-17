@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  decrement,
-  increment,
-  incrementByAmount,
-  incrementAsync,
-  selectCount,
+  loadcontent
 } from './counterSlice';
 import styles from './Counter.module.css';
 
