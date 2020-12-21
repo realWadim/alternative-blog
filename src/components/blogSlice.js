@@ -7,10 +7,10 @@ export const blogSlice = createSlice({
     },
     reducers: {
         addPost: (state, action) => {
-            state.posts.push({"title": `hello${state.posts.length}!!`, "body": "Im a test content woho"});
+            state.posts.push({"title": `hello${state.posts.length}!!`, "body": "Im a test content "});
         },
         setPosts: (state, action) => {
-            state.posts = action.payload
+            state.posts = action.payload.results
         }
     },
 });
@@ -18,7 +18,7 @@ export const blogSlice = createSlice({
 export const { addPost, setPosts } = blogSlice.actions;
 
 export const fetchPosts = () => dispatch => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('/api/posts/')
         .then(response => response.json())
         .then(json => dispatch(setPosts(json)))
 };

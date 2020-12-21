@@ -1,5 +1,5 @@
 from django.db import models
 
 class BlogPost(models.Model):
-    Title = models.CharField(max_length=150)
-    Content = models.CharField(max_length=3000)
+    title = models.CharField(max_length=150)
+    content = models.CharField(max_length=3000)

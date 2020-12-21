@@ -5,4 +5,4 @@ from rest_framework import serializers
 class BlogPostSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = BlogPost
-        fields = ['Title', 'Content']
+        fields = ['title', 'content']
