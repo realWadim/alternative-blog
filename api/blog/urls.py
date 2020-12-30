@@ -15,9 +15,13 @@ Including another URLconf
 """
 
 from django.urls import include, path
+from django.conf.urls import url
 from rest_framework import routers
 from blog.quickstart import views
 from django.contrib import admin
+from blog.quickstart.admin import site
+admin.site = site
+admin.autodiscover()
 
 router = routers.DefaultRouter()
 router.register(r'posts', views.BlogPostViewSet)
@@ -27,6 +31,6 @@ router.register(r'posts', views.BlogPostViewSet)
 urlpatterns = [
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
 
 ]

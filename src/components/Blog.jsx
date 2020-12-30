@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {addPost, fetchPosts, selectPosts, setPosts} from "./blogSlice";
+import { fetchPosts, selectPosts} from "./blogSlice";
 
 function Blog() {
     const posts = useSelector(selectPosts);
@@ -16,8 +16,6 @@ function Blog() {
 
 
                         <div>
-                            {/*<button onClick={() => dispatch(addPost(posts.length))}>Add</button>*/}
-                            {/*<button onClick={() => dispatch(setPosts([]))}>Reset</button>*/}
                             {
                                 posts.map(post => <div key={post.id}>
                                     <h3>{post.title}</h3>

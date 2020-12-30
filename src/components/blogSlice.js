@@ -6,16 +6,16 @@ export const blogSlice = createSlice({
         posts: [],
     },
     reducers: {
-        addPost: (state, action) => {
-            state.posts.push({"title": `hello${state.posts.length}!!`, "body": "Im a test content "});
-        },
+        // addPost: (state, action) => {
+        //     state.posts.push({"title": `hello${state.posts.length}!!`, "body": "Im a test content "});
+        // },
         setPosts: (state, action) => {
             state.posts = action.payload.results
         }
     },
 });
 
-export const { addPost, setPosts } = blogSlice.actions;
+export const { setPosts } = blogSlice.actions;
 
 export const fetchPosts = () => dispatch => {
     fetch('/api/posts/')
